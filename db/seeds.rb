@@ -8,7 +8,13 @@
 
 10.times do
   Article.create(
-    title: Faker::Hipster.sentences
-    content: Faker::Lorem.paragraph
+    title: Faker::Hipster.sentences(number: 1)[0],
+    content: Faker::Quote.matz
   )
+  # = new + save
 end
+
+# 10.times do
+#   article = Article.new(title: Faker::Hipster.sentences, content: Faker::Lorem.paragraph)
+#   article.save!
+# end
